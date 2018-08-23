@@ -30,9 +30,9 @@ title: Deploy web in docker!
 以上就完成了Dockerfile脚本的工作。
 本地测试项目可以正常运行之后推送到代码仓库。
 2. 在centOS中创建镜像并启动容器  
-从代码仓库拉取项目代码到虚拟机中，cd进入项目根目录执行命令：  
+从代码仓库拉取项目代码到虚拟机中，cd进入项目Dockerfile所在根目录执行命令：  
 `docker build -t mynodeapp .`  
-注意最后那个点  
+注意最后那个点，表示当前目录，如果是在其他目录执行上述命令，那就需要把"."改成Dockerfile的相对路径  
 上述命令会逐步执行Dockerfile中的每行指令  
 类似下图  
 ![_config.yml]({{ site.baseurl }}/images/docker_build.png)
