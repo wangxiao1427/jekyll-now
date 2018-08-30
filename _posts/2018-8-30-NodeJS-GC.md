@@ -27,18 +27,22 @@ V8引擎的内存限制为0.7GB(64位为1.4GB)，这种情况下是无法操作�
 <h3>如上，所有环境安装成功之后，开始进入正题</h3>  
 先在centOS中跑一个简单的内存泄漏的web服务，代码如下： 
 
-  var http = require('http');
-  var leakArray = [];
-  var leak = function () {
-    leakArray.push("leak" + Math.random());
-  };
-  http.createServer(function (req, res) {
-    leak();
-    let temp = 1;
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-  }).listen(1337); 
-  console.log('Server running at http://127.0.0.1:1337/'); 
+  <pre>
+    <code>
+      var http = require('http');
+      var leakArray = [];
+      var leak = function () {
+        leakArray.push("leak" + Math.random());
+      };
+      http.createServer(function (req, res) {
+        leak();
+        let temp = 1;
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('Hello World\n');
+      }).listen(1337); 
+      console.log('Server running at http://127.0.0.1:1337/'); 
+    </code>
+  </pre>
 
 此段代码，多次访问接口之后，leakArray一直在占用内存没有释放。  
 
