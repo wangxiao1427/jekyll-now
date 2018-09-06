@@ -1,3 +1,10 @@
+---
+layout: post
+title: kunernetes & docker新手村
+---
+
+从零开始学习kunernetes & docker
+
 * 安装  
 ```yum install -y etcd kubernetes```  
 -y : 默认yes
