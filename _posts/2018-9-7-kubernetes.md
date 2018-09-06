@@ -31,6 +31,8 @@
 ```
 可能出现的问题：
 + docker启动报错  
-  Job for docker.service failed because the control process exited with error code. See "systemctl status docker.service" and "journalctl -xe" for details.
-A dependency job for kubelet.service failed. See 'journalctl -xe' for details.  
-解决方案：
+  ![_config.yml]({{ site.baseurl }}/images/k8s_docker_start.png)
+解决方案：比较暴力点的就是卸载docker，然后重装k8s，会单独修复docker模块。  
+```yum remove docker```  
+```yum install -y kubernetes```  
+
