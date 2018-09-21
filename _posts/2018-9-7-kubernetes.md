@@ -42,4 +42,7 @@ title: kunernetes & docker新手村
 解决方案：比较暴力点的就是卸载docker，然后重装k8s，会单独修复docker模块。  
 ```yum remove docker```  
 ```yum install -y kubernetes```  
-
++ 首次创建kube yaml文件创建rc时，出现"kubernetes启动容器时，容器一直是ContainerCreating不能running"，之后按照[解决方案1](https://blog.csdn.net/gezilan/article/details/80011905)执行到  
+```docker pull registry.access.redhat.com/rhel7/pod-infrastructure:latest```  
+报错"open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or"  
+[解决方案2](https://blog.csdn.net/qq_15206589/article/details/81513178)
