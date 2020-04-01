@@ -1,6 +1,6 @@
 ---
 layout: post
-title: kunernetes & docker新手村
+title: kunernetes & docker
 ---
 
 从零开始学习kunernetes & docker
